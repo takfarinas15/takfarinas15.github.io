@@ -13,7 +13,7 @@ body {
 }
 
 .todoContainer {
-  background-color: rgba(122, 193, 98, 0.468);
+  background-color: rgba(215, 243, 205, 0.468);
   width: 500px;
   padding: 20px;
   text-align: center;
@@ -50,6 +50,8 @@ li:last-child {
   border-radius: 5px;
   min-height: 30px;
   min-width: 70px;
+  background: white;
+  margin-right: 2px;
 }
 
 .deleteBtn:hover {
