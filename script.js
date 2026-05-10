@@ -20,6 +20,6 @@ button.addEventListener("click", () => {
 todotext.addEventListener("click", (e) => {
   if (e.target.classList.contains("deleteBtn")) e.target.closest("li").remove();
   else {
-    console.log("ouii");
+    return;
   }
 });
