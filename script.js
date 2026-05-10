@@ -1,25 +1,98 @@
-const input = document.querySelector("#Ipt");
-const button = document.getElementById("btn");
-const todotext = document.querySelector("#todo");
+* {
+  box-sizing: border-box;
+  font-family: arial, sans-serif;
+  padding: 0;
+  margin: 0;
+}
 
-let tache = "";
-input.addEventListener("input", (e) => {
-  tache = e.target.value.trim();
-});
+body {
+  display: flex;
+  justify-content: center; /* horizontal */
+  align-items: center; /* vertical */
+  min-height: 100vh;
+}
 
-button.addEventListener("click", () => {
-  if (tache === "") {
-    return;
-  } else {
-    todotext.innerHTML += `<li>${tache} <button class="deleteBtn">Supprimer</button> </li>`;
-    input.value = "";
-    tache = "";
-  }
-});
+.todoContainer {
+  background-color: rgba(215, 243, 205, 0.468);
+  width: 500px;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid black;
+  box-shadow: 0px 0px 10px 0px #181818;
+  border-radius: 10px;
+}
 
-todotext.addEventListener("click", (e) => {
-  if (e.target.classList.contains("deleteBtn")) e.target.closest("li").remove();
-  else {
-    console.log("ouii");
-  }
-});
+h1 {
+  margin: 0 auto 10px;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 10px 0 0 0px;
+  margin: 0 12px 0 15px;
+}
+
+li {
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  padding: 8px 0 0 0;
+  border-bottom: px solid whitesmoke;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+.deleteBtn {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  min-height: 30px;
+  min-width: 70px;
+  background: white;
+  margin-right: 2px;
+}
+
+.deleteBtn:hover {
+  cursor: pointer;
+  border-radius: 5px;
+  background: rgb(222, 94, 94);
+  color: rgba(254, 255, 255, 0.946);
+  box-shadow: 0px 0px 10px 0px #e65130;
+  border: none;
+}
+
+#Ipt {
+  background-color: white;
+  border: none;
+  border-radius: 4px;
+  min-width: 350px;
+  min-height: 35px;
+  padding-left: 10px;
+  box-shadow: 0px 0px 5px 0px #383838;
+}
+
+#Ipt:focus {
+  outline: none; /* supprime l'outline par défaut */
+
+  /* et tu mets ce que tu veux à la place */
+  border: 2px solid white;
+  box-shadow: 0px 0px 5px 0px #ffffff;
+}
+
+#btn {
+  border-radius: 5px;
+  cursor: pointer;
+  min-width: 70px;
+  min-height: 35px;
+  background: rgb(108, 168, 207);
+  color: rgba(254, 255, 255, 0.946);
+  border: 2px solid rgb(108, 168, 207);
+  margin-left: 5px;
+}
+#btn:hover {
+  background: rgb(140, 227, 90);
+  box-shadow: 0px 0px 10px 2px #ffffff;
+  border: none;
+}
